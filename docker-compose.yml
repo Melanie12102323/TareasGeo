@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    container_name: tareasgeo_web
+    ports:
+      - "8000:8000"
+    volumes:
+      # Monta el proyecto: los cambios se ven al instante y
+      # db.sqlite3 se conserva aunque borres el contenedor
+      - .:/app

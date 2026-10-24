@@ -41,7 +41,6 @@ class TaskViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         qs = Task.objects.select_related("project").prefetch_related("tags", "subtasks")
-        # Filtros opcionales: /api/tasks/?status=Doing&project=1
         status = self.request.query_params.get("status")
         project = self.request.query_params.get("project")
         if status:

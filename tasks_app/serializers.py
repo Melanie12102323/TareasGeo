@@ -27,7 +27,6 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class TeamSerializer(serializers.ModelSerializer):
-    # La relación pasa por TeamMember, por eso es solo lectura aquí.
     members = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
 
     class Meta:
